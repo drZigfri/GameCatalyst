@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/3.0">
+  <id>com.n2.apps.GameCatalyst</id>
+  <versionNumber>0.1</versionNumber>
+  <filename>GameCatalyst</filename>
+  <name>GameCatalyst</name>
+  <description>Game creation applipcation.</description>
+  <copyright>N2 group</copyright>
+  <initialWindow>
+    <renderMode>gpu</renderMode>
+    <title>GameCatalyst</title>
+    <content>GameCatalyst.swf</content>
+    <systemChrome>none</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>false</resizable>
+    <width>1000</width>
+    <height>700</height>
+  </initialWindow>
+  <!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+</application>
