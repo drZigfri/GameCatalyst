@@ -10,27 +10,27 @@ package com.n2.components.omp {
 	 */
 	public class ObjectsManipulationPanel extends Sprite {
 		[Inject]
-		public var _controlPanel:ObjectControlPanel;
+		public var controlPanel:ObjectControlPanel;
 		[Inject]
-		public var _selectionPanel:ObjectSelectionPanel;
+		public var selectionPanel:ObjectSelectionPanel;
 		
 		public function ObjectsManipulationPanel() {
 			var background:OMPViewBackground = new OMPViewBackground();
-			_controlPanel = new ObjectControlPanel();
-			_selectionPanel = new ObjectSelectionPanel();
+			controlPanel = new ObjectControlPanel();
+			selectionPanel = new ObjectSelectionPanel();
 			
 			//Set panel coordinates
-			_controlPanel.x = 5;
-			_controlPanel.y = 5;
-			_selectionPanel.x = 5;
-			_selectionPanel.y = 170;
+			controlPanel.x = 5;
+			controlPanel.y = 5;
+			selectionPanel.x = 5;
+			selectionPanel.y = 170;
 			
 			//Set sizes
 			background.height = 480;
 			
 			addChild(background);
-			addChild(_controlPanel);
-			addChild(_selectionPanel);
+			addChild(controlPanel);
+			addChild(selectionPanel);
 		}
 	
 	}

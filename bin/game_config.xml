@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<level index="1"
+		   id="Level 1"
+		   levelClass="">
+		<objects>
+			<interactive id="car1"
+						 type="vehicle"
+						 classPath=""
+						 assetPath=""
+						 textureIDs=";"
+						 texturePaths=";">
+				<additionalParam id="">value</additionalParam>
+			</interactive>
+			<noninteractive id="trashCan"
+							type=""
+							assetGroup=""
+							classPath=""
+							assetPath=""
+							textureIDs=";"
+							texturePaths=";" />
+		</objects>
+	</level>
+</data>

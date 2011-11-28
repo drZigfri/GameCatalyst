@@ -1,4 +1,5 @@
 package com.n2.apps.gc.view {
+	import com.n2.apps.gc.events.ContextEventGC;
 	import com.n2.components.omp.ObjectsManipulationPanel;
 	import com.n2.components.scene.SceneView;
 	import flash.display.Sprite;
@@ -14,11 +15,13 @@ package com.n2.apps.gc.view {
 		private var _sceneView:SceneView;
 		
 		public function GameCatalystView(){
-			_objectManipulationPanel = new ObjectsManipulationPanel();
-			_sceneView = new SceneView();
 		}
 		
 		public function initialize():void {
+			//Instantiate views
+			_objectManipulationPanel = new ObjectsManipulationPanel();
+			_sceneView = new SceneView();
+			
 			//Set components positions
 			_objectManipulationPanel.x = 5;
 			_objectManipulationPanel.y = 5;
@@ -27,6 +30,8 @@ package com.n2.apps.gc.view {
 			
 			addChild(_objectManipulationPanel);
 			addChild(_sceneView);
+			
+			dispatchEvent(new ContextEventGC(ContextEventGC.VIEW_INITIALIZATION_END));
 		}
 	
 	}

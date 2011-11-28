@@ -32,10 +32,10 @@ package com.n2.components.omp.view.ocp {
 		private function mapEvents():void {
 			//Listen to sliders and text inputs for parameter change
 			for (var i:int = 0; i < view.numChildren; i++){
-				var child : * = view.getChildAt(i);
-				if(child is TextInput)
+				var child:* = view.getChildAt(i);
+				if (child is TextInput)
 					eventMap.mapListener(child, Event.CHANGE, handleObjectParameterChange);
-				else if (child is Slider) {
+				else if (child is Slider){
 					eventMap.mapListener(child, SliderEvent.CHANGE, handleObjectParameterChange);
 					eventMap.mapListener(child, SliderEvent.THUMB_DRAG, handleObjectParameterChange);
 				}

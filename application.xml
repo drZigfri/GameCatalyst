@@ -18,6 +18,8 @@
     <resizable>false</resizable>
     <width>1000</width>
     <height>700</height>
+    <x>100</x>
+    <y>100</y>
   </initialWindow>
   <!-- 
 	More options:

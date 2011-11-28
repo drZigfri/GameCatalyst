@@ -1,5 +1,5 @@
 package com.n2.components.omp.view {
-	import com.n2.components.omp.model.OMPModel;
+	import com.n2.apps.gc.model.services.library.events.LibraryEvent;
 	import com.n2.components.omp.ObjectsManipulationPanel;
 	import com.n2.components.omp.view.ocp.ObjectControlPanel;
 	import com.n2.components.omp.view.ocp.ObjectControlPanelMediator;
@@ -13,13 +13,12 @@ package com.n2.components.omp.view {
 	 */
 	public class OMPMediator extends Mediator {
 		[Inject]
-		public var view : ObjectsManipulationPanel;
+		public var view:ObjectsManipulationPanel;
 		
-		public function OMPMediator(){	
+		public function OMPMediator(){
 		}
 		
-		override public function onRegister() : void {
-			trace("onRegister 2");
+		override public function onRegister():void {
 			//Map views
 			mediatorMap.mapView(ObjectControlPanel, ObjectControlPanelMediator);
 			mediatorMap.mapView(ObjectSelectionPanel, ObjectSelectionPanelMediator);

@@ -1,9 +1,11 @@
 package com.n2.apps.gc {
+	import com.n2.apps.gc.events.ContextEventGC;
 	import com.n2.apps.gc.GameCatalystContext;
 	import com.n2.apps.gc.view.GameCatalystView;
 	import com.n2.components.scene.SceneView;
 	import flash.display.Sprite;
 	import flash.display.StageScaleMode;
+	import flash.events.Event;
 	
 	/**
 	 * ...
@@ -14,11 +16,9 @@ package com.n2.apps.gc {
 		
 		public function GameCatalyst(){
 			_gameCatalystContext = new GameCatalystContext(this);
-			
-			initializeView();
 		}
 		
-		private function initializeView():void {
+		public function initializeView():void {
 			var gcview:GameCatalystView;
 			
 			setupStage();
@@ -29,6 +29,8 @@ package com.n2.apps.gc {
 			//Set view coordinates
 			gcview.x = 0;
 			gcview.y = 0;
+			
+			gcview.initialize();
 			
 			//Add application to context view
 			this.addChild(gcview);

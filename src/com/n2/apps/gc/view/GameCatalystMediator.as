@@ -1,7 +1,8 @@
 package com.n2.apps.gc.view {
 	import com.n2.apps.gc.events.ContextEventGC;
 	import com.n2.apps.gc.model.GameCatalystModel;
-	import com.n2.components.library.events.AssetLoaderEvent;
+	import com.n2.apps.gc.model.services.loader.ComponentLoader;
+	import com.n2.apps.gc.model.services.loader.events.ComponentLoaderEvent;
 	import org.robotlegs.base.ContextEvent;
 	import org.robotlegs.mvcs.Mediator;
 	
@@ -14,25 +15,15 @@ package com.n2.apps.gc.view {
 		public var view:GameCatalystView;
 		[Inject]
 		public var model:GameCatalystModel;
+		[Inject]
+		public var loader:ComponentLoader;
 		
 		public function GameCatalystMediator(){
 		}
 		
 		override public function onRegister():void {
 			//Map events
-			eventMap.mapListener(model.gameObjectsLibrary, AssetLoaderEvent.LOAD_ASSETS_END, handleAssetsLoaded, AssetLoaderEvent);
-			
-			initView();
 		}
-		
-		private function initView():void {
-			view.initialize();
-		}
-		
-		private function handleAssetsLoaded(e:AssetLoaderEvent):void {
-			//TODO: Assets loaded handling
-		}
-	
 	}
 
 }
