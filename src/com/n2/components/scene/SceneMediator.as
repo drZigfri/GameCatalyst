@@ -1,4 +1,5 @@
 package com.n2.components.scene {
+	import away3d.containers.ObjectContainer3D;
 	import away3d.controllers.HoverController;
 	import away3d.core.base.Geometry;
 	import away3d.entities.Mesh;
@@ -6,8 +7,8 @@ package com.n2.components.scene {
 	import away3d.library.assets.AssetType;
 	import away3d.lights.DirectionalLight;
 	import com.n2.apps.gc.model.GameCatalystModel;
-	import com.n2.components.omp.view.events.ObjectControlPanelEvent;
-	import com.n2.components.omp.view.events.ObjectSelectionPanelEvent;
+	import com.n2.components.gop.events.ObjectControlPanelEvent;
+	import com.n2.components.ol.events.ObjectSelectionPanelEvent;
 	import com.n2.components.scene.events.SceneEvent;
 	import com.n2.components.scene.model.SceneModel;
 	import org.robotlegs.mvcs.Mediator;
@@ -20,7 +21,7 @@ package com.n2.components.scene {
 		[Inject]
 		public var model:SceneModel;
 		[Inject]
-		public var view:SceneView;
+		public var sceneView:SceneView;
 		[Inject]
 		public var gameCatalystModel:GameCatalystModel;
 		
@@ -34,24 +35,21 @@ package com.n2.components.scene {
 			eventMap.mapListener(eventDispatcher, ObjectControlPanelEvent.UPDATE_OBJECT_PARAMETERS, handleObjectParamsUpdate, ObjectControlPanelEvent);
 			
 			//Initialize view
-			view.initialize();
+			sceneView.initialize();
 		
 			//TODO: Initialize camera controller
 		}
 		
 		private function handleObjectSelected(e:ObjectSelectionPanelEvent):void {
 			model.selectedStageObject = e.gameObject;
+			sceneView.moveCameraToSelectedObject = true;
+			sceneView.lookAtObject = e.gameObject.objectRepresentation;
 		}
 		
 		private function handleAddObjectToStage(e:ObjectSelectionPanelEvent):void {
 			var go:Object = e.gameObject;
 			var assets:Object = gameCatalystModel.gameObjectsLibrary.getResourceByID(go.id).assets;
-			var meshes:Vector.<Mesh> = new Vector.<Mesh>();
-			//
-			//var randX:Number = 300 + (1500 * Math.random());
-			//var randY:Number = 50 + (500 * Math.random());
-			//var randZ:Number = -300 + (2200 * Math.random());
-			//var randScale:Number = Math.round(5 * Math.random());
+			var objectRepresentation:ObjectContainer3D = new ObjectContainer3D();
 			
 			for (var i:int = 0; i < assets.length; i++){
 				if (assets[i].assetType == AssetType.MESH){
@@ -61,13 +59,16 @@ package com.n2.components.scene {
 					msh.z = 0;
 					msh.scale(1);
 					
-					meshes.push(msh);
-					view.view.scene.addChild(msh);
-						//sceneView.view.camera.lookAt(msh.position);
+					objectRepresentation.addChild(msh);
 				}
 			}
-			go.meshes = meshes;
-			dispatch(new SceneEvent(SceneEvent.OBJECT_ADDED_TO_STAGE, go));
+			
+			go.objectRepresentation = objectRepresentation;
+			
+			model.stageObjects.addItem(go);
+			
+			sceneView.view.scene.addChild(objectRepresentation);
+			dispatch(new SceneEvent(SceneEvent.OBJECT_ADDED_TO_STAGE));
 		}
 		
 		private function handleObjectParamsUpdate(e:ObjectControlPanelEvent):void {
@@ -83,14 +84,9 @@ package com.n2.components.scene {
 			}
 			
 			//TODO: object manipulation code
-			trace("model.selectedStageObject: " + model.selectedStageObject);
 			if (model.selectedStageObject != null){
-				var meshes:Vector.<Mesh> = model.selectedStageObject.meshes;
-				var mesh:Mesh;
-				for (var i:int = 0; i < meshes.length; i++){
-					mesh = meshes[i];
-					mesh[tt + tp] = e.targetValue;
-				}
+				var objectRepresentation:ObjectContainer3D = model.selectedStageObject.objectRepresentation;
+				objectRepresentation[tt + tp] = e.targetValue;
 			}
 		}
 	}

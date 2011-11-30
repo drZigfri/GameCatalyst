@@ -1,6 +1,13 @@
 package com.n2.apps.gc.view {
+	import alternativa.gui.base.GUIobject;
+	import alternativa.gui.layout.DefaultLayoutManager;
+	import alternativa.gui.layout.LayoutManager;
+	import alternativa.gui.mouse.MouseManager;
+	import alternativa.gui.theme.defaulttheme.init.DefaultTheme;
+	import alternativa.gui.theme.defaulttheme.primitives.base.Hint;
+	import alternativa.init.GUI;
 	import com.n2.apps.gc.events.ContextEventGC;
-	import com.n2.components.omp.ObjectsManipulationPanel;
+	import com.n2.apps.gc.view.gcmenu.GameCatalystMenuView;
 	import com.n2.components.scene.SceneView;
 	import flash.display.Sprite;
 	
@@ -8,30 +15,39 @@ package com.n2.apps.gc.view {
 	 * ...
 	 * @author Eli Nesic
 	 */
-	public class GameCatalystView extends Sprite {
+	public class GameCatalystView extends GUIobject {
 		[Inject]
-		private var _objectManipulationPanel:ObjectsManipulationPanel;
-		[Inject]
-		private var _sceneView:SceneView;
+		public var sceneView:SceneView;
+		
+		private var _gameMenu:GameCatalystMenuView;
+		private var _componentContainer:Sprite;
 		
 		public function GameCatalystView(){
+			mouseChildren = true;
+			mouseEnabled = true;
 		}
 		
 		public function initialize():void {
 			//Instantiate views
-			_objectManipulationPanel = new ObjectsManipulationPanel();
-			_sceneView = new SceneView();
+			sceneView = new SceneView();
+			_componentContainer = new Sprite();
+			_gameMenu = new GameCatalystMenuView();
 			
 			//Set components positions
-			_objectManipulationPanel.x = 5;
-			_objectManipulationPanel.y = 5;
-			_sceneView.x = 310;
-			_sceneView.y = 5;
+			_componentContainer.x = 0;
+			_componentContainer.y = 35;
+			sceneView.x = 5;
+			sceneView.y = 50;
 			
-			addChild(_objectManipulationPanel);
-			addChild(_sceneView);
+			addChild(sceneView);
+			addChild(_componentContainer);
+			addChild(_gameMenu);
 			
 			dispatchEvent(new ContextEventGC(ContextEventGC.VIEW_INITIALIZATION_END));
+		}
+		
+		public function get componentContainer():Sprite {
+			return _componentContainer;
 		}
 	
 	}

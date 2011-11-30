@@ -10,9 +10,12 @@ package com.n2.apps.gc {
 	import com.n2.apps.gc.model.services.loader.queue.LoaderQueue;
 	import com.n2.apps.gc.view.GameCatalystMediator;
 	import com.n2.apps.gc.view.GameCatalystView;
-	import com.n2.components.omp.model.OMPModel;
-	import com.n2.components.omp.ObjectsManipulationPanel;
-	import com.n2.components.omp.view.OMPMediator;
+	import com.n2.apps.gc.view.gcmenu.GameCatalystMenuMediator;
+	import com.n2.apps.gc.view.gcmenu.GameCatalystMenuView;
+	import com.n2.components.gop.GameObjectProperties;
+	import com.n2.components.gop.GameObjectPropertiesMediator;
+	import com.n2.components.ol.ObjectsLibrary;
+	import com.n2.components.ol.ObjectsLibraryMediator;
 	import com.n2.components.scene.model.SceneModel;
 	import com.n2.components.scene.SceneMediator;
 	import com.n2.components.scene.SceneView;
@@ -55,14 +58,14 @@ package com.n2.apps.gc {
 			injector.mapSingleton(SceneModel);
 			injector.mapSingleton(GameObjectsLibrary);
 			injector.mapSingleton(ComponentLoader);
-			//TODO: Make sure we need OMPModel otherwise remove
-			injector.mapSingleton(OMPModel);
 		}
 		
 		private function mapViews():void {
 			mediatorMap.mapView(GameCatalystView, GameCatalystMediator);
-			mediatorMap.mapView(ObjectsManipulationPanel, OMPMediator);
+			mediatorMap.mapView(GameCatalystMenuView, GameCatalystMenuMediator);
 			mediatorMap.mapView(SceneView, SceneMediator);
+			mediatorMap.mapView(GameObjectProperties, GameObjectPropertiesMediator);
+			mediatorMap.mapView(ObjectsLibrary, ObjectsLibraryMediator);
 		}
 	}
 

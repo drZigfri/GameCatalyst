@@ -1,4 +1,4 @@
-package com.n2.components.omp.view.events {
+package com.n2.components.gop.events {
 	import flash.events.Event;
 	
 	/**
