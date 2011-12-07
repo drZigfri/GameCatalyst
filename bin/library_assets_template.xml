@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<objects>
+		<gameAsset id="player_01"
+				   assetGroup="players"
+				   assetPath="assets/models/player/player_01/player_01.3DS">
+			<additionalParam id="mount"
+							 name="rightHandMount" />
+		</gameAsset>
+		<gameAsset id="player_02"
+				   assetGroup="players"
+				   assetPath="assets/models/player/player_02/player_02.3DS">
+		</gameAsset>
+		<gameAsset id="player_03"
+				   assetGroup="players"
+				   assetPath="assets/models/player/player_03/player_03.3DS">
+		</gameAsset>
+		<gameAsset id="player_04"
+				   assetGroup="players"
+				   assetPath="assets/models/player/player_04/player_04.3DS">
+		</gameAsset>
+		<gameAsset id="gc_dn_ground_01"
+				   assetGroup="terrains"
+				   assetPath="assets/models/gc_dn_ground_01.3DS">
+		</gameAsset>
+	</objects>
+</data>

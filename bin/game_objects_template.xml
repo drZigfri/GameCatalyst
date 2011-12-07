@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+	<objects>
+		<gameObject name="Player 01">
+			<property id="basic"
+					  type="category">
+				<property id="id"
+						  value="player_01" />
+				<property id="type"
+						  value="player" />
+				<property id="objectGroup"
+						  value="players" />
+				<property id="assetID"
+						  value="player_01" />
+				<property id="stageID"
+						  value="obj_player_01" />
+			</property>
+			<property id="transform"
+					  type="category">
+				<property id="position"
+						  type="category">
+					<property id="x"
+							  value="0" />
+					<property id="y"
+							  value="0" />
+					<property id="z"
+							  value="0" />
+				</property>
+				<property id="rotation"
+						  type="category">
+					<property id="rotationX"
+							  value="0" />
+					<property id="rotationY"
+							  value="0" />
+					<property id="rotationZ"
+							  value="0" />
+				</property>
+				<property id="scale"
+						  type="category">
+					<property id="scaleX"
+							  value="1" />
+					<property id="scaleY"
+							  value="1" />
+					<property id="scaleZ"
+							  value="1" />
+				</property>
+			</property>
+			<property id="physics"
+					  type="category">
+				<property id="active"
+						  value="true" />
+				<property id="shape"
+						  shapeID="sphere" />
+				<property id="radiusX"
+						  value="20" />
+				<property id="radiusY"
+						  value="20" />
+				<property id="radiusZ"
+						  value="20" />
+			</property>
+			<property id="mountPoints"
+					  type="category">
+				<property id="mountRight"
+						  value="weapon_01" />
+				<property id="mountLeft"
+						  value="weapon_02" />
+			</property>
+		</gameObject>
+		
+		<gameObject name="Player 02">
+			<property id="basic"
+					  type="category">
+				<property id="id"
+						  value="player_02" />
+				<property id="type"
+						  value="player" />
+				<property id="objectGroup"
+						  value="players" />
+				<property id="assetID"
+						  value="player_02" />
+				<property id="stageID"
+						  value="obj_player_02" />
+			</property>
+			<property id="transform"
+					  type="category">
+				<property id="position"
+						  type="category">
+					<property id="x"
+							  value="0" />
+					<property id="y"
+							  value="0" />
+					<property id="z"
+							  value="0" />
+				</property>
+				<property id="rotation"
+						  type="category">
+					<property id="rotationX"
+							  value="0" />
+					<property id="rotationY"
+							  value="0" />
+					<property id="rotationZ"
+							  value="0" />
+				</property>
+				<property id="scale"
+						  type="category">
+					<property id="scaleX"
+							  value="1" />
+					<property id="scaleY"
+							  value="1" />
+					<property id="scaleZ"
+							  value="1" />
+				</property>
+			</property>
+			<property id="physics"
+					  type="category">
+				<property id="active"
+						  value="true" />
+				<property id="shape"
+						  shapeID="sphere" />
+				<property id="radiusX"
+						  value="20" />
+				<property id="radiusY"
+						  value="20" />
+				<property id="radiusZ"
+						  value="20" />
+			</property>
+			<property id="mountPoints"
+					  type="category">
+				<property id="mountRight"
+						  value="weapon_01" />
+				<property id="mountLeft"
+						  value="weapon_02" />
+			</property>
+		</gameObject>
+		
+		<gameObject name="Player 03">
+			<property id="basic"
+					  type="category">
+				<property id="id"
+						  value="player_03" />
+				<property id="type"
+						  value="player" />
+				<property id="objectGroup"
+						  value="players" />
+				<property id="assetID"
+						  value="player_03" />
+				<property id="stageID"
+						  value="obj_player_03" />
+			</property>
+			<property id="transform"
+					  type="category">
+				<property id="position"
+						  type="category">
+					<property id="x"
+							  value="0" />
+					<property id="y"
+							  value="0" />
+					<property id="z"
+							  value="0" />
+				</property>
+				<property id="rotation"
+						  type="category">
+					<property id="rotationX"
+							  value="0" />
+					<property id="rotationY"
+							  value="0" />
+					<property id="rotationZ"
+							  value="0" />
+				</property>
+				<property id="scale"
+						  type="category">
+					<property id="scaleX"
+							  value="1" />
+					<property id="scaleY"
+							  value="1" />
+					<property id="scaleZ"
+							  value="1" />
+				</property>
+			</property>
+			<property id="physics"
+					  type="category">
+				<property id="active"
+						  value="true" />
+				<property id="shape"
+						  shapeID="sphere" />
+				<property id="radiusX"
+						  value="20" />
+				<property id="radiusY"
+						  value="20" />
+				<property id="radiusZ"
+						  value="20" />
+			</property>
+			<property id="mountPoints"
+					  type="category">
+				<property id="mountRight"
+						  value="weapon_01" />
+				<property id="mountLeft"
+						  value="weapon_02" />
+			</property>
+		</gameObject>
+		
+		<gameObject name="Player 04">
+			<property id="basic"
+					  type="category">
+				<property id="id"
+						  value="player_04" />
+				<property id="type"
+						  value="player" />
+				<property id="objectGroup"
+						  value="players" />
+				<property id="assetID"
+						  value="player_04" />
+				<property id="stageID"
+						  value="obj_player_04" />
+			</property>
+			<property id="transform"
+					  type="category">
+				<property id="position"
+						  type="category">
+					<property id="x"
+							  value="0" />
+					<property id="y"
+							  value="0" />
+					<property id="z"
+							  value="0" />
+				</property>
+				<property id="rotation"
+						  type="category">
+					<property id="rotationX"
+							  value="0" />
+					<property id="rotationY"
+							  value="0" />
+					<property id="rotationZ"
+							  value="0" />
+				</property>
+				<property id="scale"
+						  type="category">
+					<property id="scaleX"
+							  value="1" />
+					<property id="scaleY"
+							  value="1" />
+					<property id="scaleZ"
+							  value="1" />
+				</property>
+			</property>
+			<property id="physics"
+					  type="category">
+				<property id="active"
+						  value="true" />
+				<property id="shape"
+						  shapeID="sphere" />
+				<property id="radiusX"
+						  value="20" />
+				<property id="radiusY"
+						  value="20" />
+				<property id="radiusZ"
+						  value="20" />
+			</property>
+			<property id="mountPoints"
+					  type="category">
+				<property id="mountRight"
+						  value="weapon_01" />
+				<property id="mountLeft"
+						  value="weapon_02" />
+			</property>
+		</gameObject>
+	</objects>
+</data>
