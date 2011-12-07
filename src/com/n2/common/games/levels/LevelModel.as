@@ -1,5 +1,5 @@
 package com.n2.common.games.levels {
-	import com.n2.common.games.IGameObject;
+	import com.n2.common.games.objects.IGameObject;
 	import org.robotlegs.mvcs.Actor;
 	
 	/**

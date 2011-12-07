@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
 <componentPackage order="0" id="initialPackage">
-	<component id="libraryConfig" type="xml-component" path="library_config.xml" order="0" />
-	<component id="gameAssets" type="swf-component" path="assets/GameAssets.swf" order="1" />
-</componentPackage>
-<componentPackage order="1" id="secondPackage">
-	<component id="img1" type="img-component" path="assets/rockbase.jpg" order="0" />
-	<component id="img2" type="img-component" path="assets/textures/sphere001.jpg" order="1" />
+	<component id="game_objects_prototypes" type="xml-component" path="game_objects_prototypes.xml" order="0" />
+	<component id="assets_library" type="xml-component" path="library_assets_template.xml" order="1" />
+	<component id="game_objects_library" type="xml-component" path="game_objects_template.xml" order="1" />
 </componentPackage>
 </data>
